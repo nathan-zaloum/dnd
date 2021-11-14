@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Races = () => {
+const Alignments = () => {
   return (
     <div className='main-page'>
-        <h1>Races</h1>
+        <h1>Alignments</h1>
     </div>
   )
 }
 
-export default Races
+export default Alignments

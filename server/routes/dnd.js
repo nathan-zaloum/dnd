@@ -3,12 +3,12 @@ const request = require('superagent')
 
 const router = express.Router()
 
-const baseURL = 'https://www.dnd5eapi.co/api/'
+const baseURL = 'https://www.dnd5eapi.co/api'
 
-router.get('/races', (req, res) => {
-  return request.get(`${baseURL}/races`)
+router.get('/', (req, res) => {
+  return request.get(baseURL)
     .then(response => {
-      return res.json(response.body.races)
+      return res.json(response.body)
     })
 })
 
