@@ -4,8 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Error404 from './Error404'
 import Nav from './Nav'
 import Home from './Home'
-import AbilityScores from './AbilityScores'
-import Alignments from './Alignments'
+import ListPage from './ListPage'
 
 const App = () => {
   return (
@@ -14,8 +13,7 @@ const App = () => {
         <Routes>
           <Route path="*" element={<Error404 />} />
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/ability-scores" element={<AbilityScores />} />
-          <Route exact path="/alignments" element={<Alignments />} />
+          <Route exact path="/:listpage" element={<ListPage />} />
         </Routes>
     </>
   )
