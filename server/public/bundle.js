@@ -191,7 +191,8 @@ function _unsupportedIterableToArray(o, minLen) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getNav": () => (/* binding */ getNav),
-/* harmony export */   "getCategory": () => (/* binding */ getCategory)
+/* harmony export */   "getCategory": () => (/* binding */ getCategory),
+/* harmony export */   "getIndividuals": () => (/* binding */ getIndividuals)
 /* harmony export */ });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
@@ -202,6 +203,11 @@ var getNav = function getNav() {
   });
 };
 var getCategory = function getCategory(link) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default().get("https://www.dnd5eapi.co/api/".concat(link)).then(function (response) {
+    return response.body.results;
+  });
+};
+var getIndividuals = function getIndividuals(link) {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default().get("https://www.dnd5eapi.co/api/".concat(link)).then(function (response) {
     return response.body.results;
   });
@@ -244,11 +250,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Error404 */ "./client/components/Error404.jsx");
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./client/components/Nav.jsx");
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Home */ "./client/components/Home.jsx");
-/* harmony import */ var _ListPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ListPage */ "./client/components/ListPage.jsx");
+/* harmony import */ var _CharacterSheet_CharacterSheet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CharacterSheet/CharacterSheet */ "./client/components/CharacterSheet/CharacterSheet.jsx");
+/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Categories */ "./client/components/Categories.jsx");
+/* harmony import */ var _Individuals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Individuals */ "./client/components/Individuals.jsx");
+
+
 
 
 
@@ -257,21 +267,120 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
     path: "*",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Error404__WEBPACK_IMPORTED_MODULE_1__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
     exact: true,
     path: "/",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_3__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
     exact: true,
-    path: "/:listpage",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ListPage__WEBPACK_IMPORTED_MODULE_4__.default, null)
+    path: "/",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CharacterSheet_CharacterSheet__WEBPACK_IMPORTED_MODULE_4__.default, null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    exact: true,
+    path: "/:categories",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Categories__WEBPACK_IMPORTED_MODULE_5__.default, null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    exact: true,
+    path: "/:categories/:individuals",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Individuals__WEBPACK_IMPORTED_MODULE_6__.default, null)
   })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./client/components/Categories.jsx":
+/*!******************************************!*\
+  !*** ./client/components/Categories.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _apis_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../apis/dnd */ "./client/apis/dnd.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
+
+
+
+
+
+
+var Categories = function Categories() {
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
+  var loadingState = [{
+    index: '',
+    name: 'Loading...',
+    url: ''
+  }];
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(loadingState),
+      _useState2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__.default)(_useState, 2),
+      links = _useState2[0],
+      setLinks = _useState2[1];
+
+  var refreshList = function refreshList() {
+    return (0,_apis_dnd__WEBPACK_IMPORTED_MODULE_2__.getCategory)((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href), 1)).then(function (data) {
+      return setLinks(data);
+    })["catch"](function (err) {
+      console.log(err.message);
+      return setLinks([{
+        index: '',
+        name: 'Error when loading category links',
+        url: ''
+      }]);
+    });
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    setLinks(loadingState);
+    refreshList();
+  }, [location]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+    className: "main-page"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, (0,_utils__WEBPACK_IMPORTED_MODULE_3__.formatLink)((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href), 1))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("ul", null, links.map(function (link) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+      key: link.index,
+      to: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(link.url, 1)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, link.name));
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Categories);
+
+/***/ }),
+
+/***/ "./client/components/CharacterSheet/CharacterSheet.jsx":
+/*!*************************************************************!*\
+  !*** ./client/components/CharacterSheet/CharacterSheet.jsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var CharacterSheet = function CharacterSheet() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "main-page"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Character Sheet"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CharacterSheet);
 
 /***/ }),
 
@@ -327,10 +436,10 @@ var Home = function Home() {
 
 /***/ }),
 
-/***/ "./client/components/ListPage.jsx":
-/*!****************************************!*\
-  !*** ./client/components/ListPage.jsx ***!
-  \****************************************/
+/***/ "./client/components/Individuals.jsx":
+/*!*******************************************!*\
+  !*** ./client/components/Individuals.jsx ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -341,7 +450,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _apis_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../apis/dnd */ "./client/apis/dnd.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
 
@@ -350,7 +458,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ListPage = function ListPage() {
+var Individuals = function Individuals() {
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
   var loadingState = [{
     index: '',
@@ -364,7 +472,8 @@ var ListPage = function ListPage() {
       setLinks = _useState2[1];
 
   var refreshList = function refreshList() {
-    return (0,_apis_dnd__WEBPACK_IMPORTED_MODULE_2__.getCategory)((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href))).then(function (data) {
+    console.log((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href), 1));
+    return (0,_apis_dnd__WEBPACK_IMPORTED_MODULE_2__.getIndividuals)((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href), 2)).then(function (data) {
       return setLinks(data);
     })["catch"](function (err) {
       console.log(err.message);
@@ -382,15 +491,10 @@ var ListPage = function ListPage() {
   }, [location]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "main-page"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, (0,_utils__WEBPACK_IMPORTED_MODULE_3__.formatLink)((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("ul", null, links.map(function (link) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-      key: link.index,
-      to: link.url
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, link.name));
-  })));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, (0,_utils__WEBPACK_IMPORTED_MODULE_3__.formatLink)((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href), 1))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("ul", null));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListPage);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Individuals);
 
 /***/ }),
 
@@ -483,8 +587,8 @@ var formatLink = function formatLink(text) {
   return words;
 }; // Get the last paramater of a URL
 
-var getLastParam = function getLastParam(url) {
-  return url.substring(url.lastIndexOf('/') + 1);
+var getLastParam = function getLastParam(url, count) {
+  return url.split('/').slice(-count).join('/');
 };
 
 /***/ }),

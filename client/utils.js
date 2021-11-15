@@ -9,6 +9,6 @@ export const formatLink = (text) => {
 }
 
 // Get the last paramater of a URL
-export const getLastParam = (url) => {
-    return url.substring(url.lastIndexOf('/') + 1)
+export const getLastParam = (url, count) => {
+    return url.split('/').slice(-count).join('/')
 }
