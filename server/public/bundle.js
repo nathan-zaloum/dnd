@@ -340,7 +340,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _apis_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../apis/dnd */ "./client/apis/dnd.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
 
@@ -349,7 +350,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ListPage = function ListPage(props) {
+var ListPage = function ListPage() {
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
   var loadingState = [{
     index: '',
     name: 'Loading...',
@@ -375,12 +377,13 @@ var ListPage = function ListPage(props) {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    setLinks(loadingState);
     refreshList();
-  }, [props]);
+  }, [location]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "main-page"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, (0,_utils__WEBPACK_IMPORTED_MODULE_3__.formatLink)((0,_utils__WEBPACK_IMPORTED_MODULE_3__.getLastParam)(String(window.location.href)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("ul", null, links.map(function (link) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
       key: link.index,
       to: link.url
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, link.name));

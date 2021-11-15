@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 
 import { getCategory } from '../apis/dnd'
 import { formatLink, getLastParam } from '../utils'
 
-const ListPage = (props) => {
+const ListPage = () => {
+
+  let location = useLocation()
 
   const loadingState = [ {index: '', name: 'Loading...', url: ''} ]
   const [links, setLinks] = useState(loadingState)
@@ -19,8 +21,9 @@ const ListPage = (props) => {
   }
 
   useEffect(() => {
+    setLinks(loadingState)
     refreshList()
-  }, [props])
+  }, [location])
 
   return (
     <div className='main-page'>
