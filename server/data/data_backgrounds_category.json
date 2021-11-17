@@ -1,4 +1,4 @@
-{ "count":18, "results": [
+{ "count": 18, "results": [
   { "index":"acolyte",        "name":"Acolyte",                "url":"/api/backgrounds/acolyte"        },
   { "index":"charlatan",      "name":"Charlatan",              "url":"/api/backgrounds/charlatan"      },
   { "index":"criminal",       "name":"Criminal",               "url":"/api/backgrounds/criminal"       },
