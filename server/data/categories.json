@@ -1,4 +1,4 @@
-{ "count": 6, "results": [
+{ "index": "categories", "url": "api/", "results": [
   { "index": "alignments",         "url": "api/alignments",         "results": [
     { "index": "lawful-good",     "name": "Lawful Good",     "url": "/api/alignments/lawful-good"     },
     { "index": "neutral-good",    "name": "Neutral Good",    "url": "/api/alignments/neutral-good"    },
