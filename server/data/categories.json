@@ -1,5 +1,5 @@
 { "index": "categories", "url": "api/", "results": [
-  { "index": "ability-scores",     "url": "api/ability-scores",     "results": [
+  { "index": "ability-scores",       "url": "api/ability-scores",       "results": [
     { "index": "strength",     "name": "Strength",     "url": "/api/ability-scores/strength"     },
     { "index": "dexterity",    "name": "Dexterity",    "url": "/api/ability-scores/dexterity"    },
     { "index": "constitution", "name": "Constitution", "url": "/api/ability-scores/constitution" },
@@ -7,7 +7,7 @@
     { "index": "wisdom",       "name": "Wisdom",       "url": "/api/ability-scores/wisdom"       },
     { "index": "charisma",     "name": "Charisma",     "url": "/api/ability-scores/charisma"     }
   ]},
-  { "index": "alignments",         "url": "api/alignments",         "results": [
+  { "index": "alignments",           "url": "api/alignments",           "results": [
     { "index": "lawful-good",     "name": "Lawful Good",     "url": "/api/alignments/lawful-good"     },
     { "index": "neutral-good",    "name": "Neutral Good",    "url": "/api/alignments/neutral-good"    },
     { "index": "chaotic-good",    "name": "Chaotic Good",    "url": "/api/alignments/chaotic-good"    },
@@ -18,7 +18,7 @@
     { "index": "neutral-evil",    "name": "Neutral Evil",    "url": "/api/alignments/neutral-evil"    },
     { "index": "chaotic-evil",    "name": "Chaotic Evil",    "url": "/api/alignments/chaotic-evil"    }
   ]},
-  { "index": "backgrounds",        "url": "api/backgrounds",        "results": [
+  { "index": "backgrounds",          "url": "api/backgrounds",          "results": [
     { "index":"acolyte",        "name":"Acolyte",                "url":"/api/backgrounds/acolyte"        },
     { "index":"charlatan",      "name":"Charlatan",              "url":"/api/backgrounds/charlatan"      },
     { "index":"criminal",       "name":"Criminal",               "url":"/api/backgrounds/criminal"       },
@@ -38,7 +38,7 @@
     { "index":"soldier",        "name":"Soldier",                "url":"/api/backgrounds/soldier"        },
     { "index":"urchin",         "name":"Urchin",                 "url":"/api/backgrounds/urchin"         }
   ]},
-  { "index": "bonds",              "url": "api/bonds",              "results": [
+  { "index": "bonds",                "url": "api/bonds",                "results": [
     "I would die to recover an ancient artifact of my faith that was lost long ago.",
     "I will someday get revenge on the corrupt temple hierarchy who branded me a heretic.",
     "I owe me life to the priest who took me in when my parents died.",
@@ -118,7 +118,7 @@
     "I escaped my life of poverty by robbing an important person, and I'm wanted for it.",
     "No one else is going to have to endure the hardships I've been through."
   ]},
-  { "index": "classes",            "url": "api/classes",            "results": [
+  { "index": "classes",              "url": "api/classes",              "results": [
     { "index": "barbarian", "name": "Barbarian", "url": "/api/classes/barbarian" },
     { "index": "bard",      "name": "Bard",      "url": "/api/classes/bard"      },
     { "index": "cleric",    "name": "Cleric",    "url": "/api/classes/cleric"    },
@@ -132,7 +132,50 @@
     { "index": "warlock",   "name": "Warlock",   "url": "/api/classes/warlock"   },
     { "index": "wizard",    "name": "Wizard",    "url": "/api/classes/wizard"    }
   ]},
-  { "index": "feats",              "url": "api/feats",              "results": [
+  { "index": "equipment-categories", "url": "api/equipment-categories", "results": [
+    { "index": "adventuring-gear",                "name": "Adventuring Gear",                  "url": "/api/equipment-categories/adventuring-gear"                },
+    { "index": "ammunition",                      "name": "Ammunition",                        "url": "/api/equipment-categories/ammunition"                      },
+    { "index": "arcane-foci",                     "name": "Arcane Foci",                       "url": "/api/equipment-categories/arcane-foci"                     },
+    { "index": "armor",                           "name": "Armor",                             "url": "/api/equipment-categories/armor"                           },
+    { "index": "artisans-tools",                  "name": "Artisan's Tools",                   "url": "/api/equipment-categories/artisans-tools"                  },
+    { "index": "common-coins",                    "name": "Common Coins",                      "url": "/api/equipment-categories/common-coins"                    },
+    { "index": "druidic-foci",                    "name": "Druidic Foci",                      "url": "/api/equipment-categories/druidic-foci"                    },
+    { "index": "equipment-packs",                 "name": "Equipment Packs",                   "url": "/api/equipment-categories/equipment-packs"                 },
+    { "index": "food-drink-and-lodging",          "name": "Food, Drink, and Lodging",          "url": "/api/equipment-categories/food-drink-and-lodging"          },
+    { "index": "gaming-sets",                     "name": "Gaming Sets",                       "url": "/api/equipment-categories/gaming-sets"                     },
+    { "index": "heavy-armor",                     "name": "Heavy Armor",                       "url": "/api/equipment-categories/heavy-armor"                     },
+    { "index": "holy-symbols",                    "name": "Holy Symbols",                      "url": "/api/equipment-categories/holy-symbols"                    },
+    { "index": "kits",                            "name": "Kits",                              "url": "/api/equipment-categories/kits"                            },
+    { "index": "land-vehicles",                   "name": "Land Vehicles",                     "url": "/api/equipment-categories/land-vehicles"                   },
+    { "index": "light-armor",                     "name": "Light Armor",                       "url": "/api/equipment-categories/light-armor"                     },
+    { "index": "martial-melee-weapons",           "name": "Martial Melee Weapons",             "url": "/api/equipment-categories/martial-melee-weapons"           },
+    { "index": "martial-ranged-weapons",          "name": "Martial Ranged Weapons",            "url": "/api/equipment-categories/martial-ranged-weapons"          },
+    { "index": "martial-weapons",                 "name": "Martial Weapons",                   "url": "/api/equipment-categories/martial-weapons"                 },
+    { "index": "medium-armor",                    "name": "Medium Armor",                      "url": "/api/equipment-categories/medium-armor"                    },
+    { "index": "melee-weapons",                   "name": "Melee Weapons",                     "url": "/api/equipment-categories/melee-weapons"                   },
+    { "index": "mounts-and-other-animals",        "name": "Mounts and Other Animals",          "url": "/api/equipment-categories/mounts-and-other-animals"        },
+    { "index": "mounts-and-vehicles",             "name": "Mounts and Vehicles",               "url": "/api/equipment-categories/mounts-and-vehicles"             },
+    { "index": "musical-instruments",             "name": "Musical Instruments",               "url": "/api/equipment-categories/musical-instruments"             },
+    { "index": "other-tools",                     "name": "Other Tools",                       "url": "/api/equipment-categories/other-tools"                     },
+    { "index": "potions",                         "name": "Potions",                           "url": "/api/equipment-categories/potions"                         },
+    { "index": "ranged-weapons",                  "name": "Ranged Weapons",                    "url": "/api/equipment-categories/ranged-weapons"                  },
+    { "index": "rings",                           "name": "Rings",                             "url": "/api/equipment-categories/rings"                           },
+    { "index": "rods",                            "name": "Rods",                              "url": "/api/equipment-categories/rods"                            },
+    { "index": "scrolls",                         "name": "Scrolls",                           "url": "/api/equipment-categories/scrolls"                         },
+    { "index": "shields",                         "name": "Shields",                           "url": "/api/equipment-categories/shields"                         },
+    { "index": "simple-melee-weapons",            "name": "Simple Melee Weapons",              "url": "/api/equipment-categories/simple-melee-weapons"            },
+    { "index": "simple-ranged-weapons",           "name": "Simple Ranged Weapons",             "url": "/api/equipment-categories/simple-ranged-weapons"           },
+    { "index": "simple-weapons",                  "name": "Simple Weapons",                    "url": "/api/equipment-categories/simple-weapons"                  },
+    { "index": "staffs",                          "name": "Staffs",                            "url": "/api/equipment-categories/staffs"                          },
+    { "index": "standard-gear",                   "name": "Standard Gear",                     "url": "/api/equipment-categories/standard-gear"                   },
+    { "index": "tack-harness-and-drawn-vehicles", "name": "Tack, Harness, and Drawn Vehicles", "url": "/api/equipment-categories/tack-harness-and-drawn-vehicles" },
+    { "index": "tools",                           "name": "Tools",                             "url": "/api/equipment-categories/tools"                           },
+    { "index": "wands",                           "name": "Wands",                             "url": "/api/equipment-categories/wands"                           },
+    { "index": "waterborne-vehicles",             "name": "Waterborne Vehicles",               "url": "/api/equipment-categories/waterborne-vehicles"             },
+    { "index": "weapons",                         "name": "Weapons",                           "url": "/api/equipment-categories/weapons"                         },
+    { "index": "wondrous-items",                  "name": "Wondrous Items",                    "url": "/api/equipment-categories/wondrous-items"                  }
+  ]},
+  { "index": "feats",                "url": "api/feats",                "results": [
     { "index":"actor",               "name":"Actor",               "url":"/api/feats/actor"               },
     { "index":"alert",               "name":"Alert",               "url":"/api/feats/alert"               },
     { "index":"athlete",             "name":"Athlete",             "url":"/api/feats/athlete"             },
@@ -176,7 +219,7 @@
     { "index":"war-caster",          "name":"War Caster",          "url":"/api/feats/war-caster"          },
     { "index":"weapon-master",       "name":"Weapon Master",       "url":"/api/feats/weapon-master"       }
   ]},
-  { "index": "flaws",              "url": "api/flaws",              "results": [
+  { "index": "flaws",                "url": "api/flaws",                "results": [
     "I judge others harshly, and myself even more severely.",
     "I put too much trust in those who wield power within my temple's hierarchy.",
     "My piety sometimes leads me to blindly trust those that profess faith in my god.",
@@ -256,7 +299,7 @@
     "It's not stealing if I need it more than someone else.",
     "People who don't take care of themselves get what they deserve."
   ]},
-  { "index": "ideals",             "url": "api/ideals",             "results": [
+  { "index": "ideals",               "url": "api/ideals",               "results": [
     { "ideal": "Aspiration",        "alignment": "any",     "desc": "I seek to prove my self worthy of my god's favor by matching my actions against his or her teachings"                  },
     { "ideal": "Aspiration",        "alignment": "any",     "desc": "I work hard to be the best there is at my craft."                                                                      },
     { "ideal": "Aspiration",        "alignment": "any",     "desc": "I'm determined to make something of myself."                                                                           },
@@ -336,7 +379,7 @@
     { "ideal": "Tradition",         "alignment": "lawful",  "desc": "The ancient traditions of worship and sacrifice must be preserved and upheld."                                         },
     { "ideal": "Tradition",         "alignment": "lawful",  "desc": "The stories, legends, and songs of the past must never be forgotten."                                                  }
   ]},
-  { "index": "languages",          "url": "api/languages",          "results": [
+  { "index": "languages",            "url": "api/languages",            "results": [
     { "index": "abyssal",     "name": "Abyssal",     "url": "/api/languages/abyssal"     },
     { "index": "celestial",   "name": "Celestial",   "url": "/api/languages/celestial"   },
     { "index": "common",      "name": "Common",      "url": "/api/languages/common"      },
@@ -354,7 +397,7 @@
     { "index": "sylvan",      "name": "Sylvan",      "url": "/api/languages/sylvan"      },
     { "index": "undercommon", "name": "Undercommon", "url": "/api/languages/undercommon" }
   ]},
-  { "index": "personality-traits", "url": "api/personality-traits", "results": [
+  { "index": "personality-traits",   "url": "api/personality-traits",   "results": [
     "I idolize a particular hero of my faith and constantly refer to that person's deeds and example.",
     "I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.",
     "I see omens in every event and action. The gods try to speak to us, we just need to listen.",
@@ -459,7 +502,7 @@
     "I don't like to bathe.",
     "I bluntly say what other people are hinting or hiding."
   ]},
-  { "index": "races",              "url": "api/races",              "results": [
+  { "index": "races",                "url": "api/races",                "results": [
     { "index": "dragonborn", "name": "Dragonborn", "url": "/api/races/dragonborn" },
     { "index": "dwarf",      "name": "Dwarf",      "url": "/api/races/dwarf"      },
     { "index": "elf",        "name": "Elf",        "url": "/api/races/elf"        },
@@ -470,7 +513,7 @@
     { "index": "human",      "name": "Human",      "url": "/api/races/human"      },
     { "index": "tiefling",   "name": "Tiefling",   "url": "/api/races/tiefling"   }
   ]},
-  { "index": "skills",             "url": "api/skills",             "results": [
+  { "index": "skills",               "url": "api/skills",               "results": [
     { "index": "athletics",       "name": "Athletics",       "ability-score": "strength",     "desc": "Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming. Examples include the following activities: You attempt to climb a sheer or slippery cliff, avoid hazards while scaling a wall, or cling to a surface while something is trying to knock you off. You try to jump an unusually long distance or pull off a stunt midjump. You struggle to swim or stay afloat in treacherous currents, storm-tossed waves, or areas of thick seaweed. Or another creature tries to push or pull you underwater or otherwise interfere with your swimming." },
     { "index": "acrobatics",      "name": "Acrobatics",      "ability-score": "dexterity",    "desc": "Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips."                                                                                                                                                                                                                       },
     { "index": "sleight-of-hand", "name": "Sleight of Hand", "ability-score": "dexterity",    "desc": "Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket."                                                                                                                                                                                                                           },
